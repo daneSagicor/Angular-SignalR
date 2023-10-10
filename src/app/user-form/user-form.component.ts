@@ -24,7 +24,8 @@ export class UserFormComponent {
 
   async ngOnInit() {
     (await this.messageService.getMessageSubject()).subscribe((message: { user: User|any; message: string|any; }) => {
-     this.messages.push(`${message.user.firstName}: ${message.message}`);
+    //  this.messages.push(`${message.user.firstName}: ${message.message}`);
+     this.messages.push(`${message.message}`);
      console.log(`Message received: ${message.user.firstName}: ${message.message}`);
    });
  }
